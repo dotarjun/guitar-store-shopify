@@ -8,12 +8,12 @@ from bs4 import BeautifulSoup
 
 def importObject(obj) :
   # Get the links from the object.
-  links = obj.links
+  links = obj['links']
 
   # Loop through the links and scrape them.
   for link in links :
     # Scrape the link.
-    scrapeLink(link)
+    scrapeLink(link['url'])
 
 def scrapeLink(link) :
   # Make a GET request to the link.
